@@ -15,6 +15,20 @@ public class SandwichShop {
             System.out.println("Large Sandwich costs $8.95");
             sandwichCost = 8.95;
         }
+
+        Scanner loaded = new Scanner(System.in);
+        System.out.println("Did you want your sandwich loaded? Yes or No");
+        String loadedSandwich = loaded.nextLine();
+        if(loadedSandwich.equalsIgnoreCase("yes") && sandwichSize == 1) {
+            System.out.println("Regular Sandwich loaded costs $1.00");
+            sandwichCost += 1.00;
+        } else if (loadedSandwich.equalsIgnoreCase("yes") && sandwichSize == 2) {
+            System.out.println("Large Sandwich loaded costs $1.75");
+            sandwichCost += 1.75;
+        }else {
+            System.out.println("Your sandwich is not loaded.");
+        }
+
         Scanner age = new Scanner(System.in);
         System.out.println("How old are you?");
         int ageOfCustomer = age.nextInt();
